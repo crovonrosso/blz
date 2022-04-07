@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {font-family: Verdana, sans-serif;background-color: #f4f4f6;}
+  img{height:95vh;}
+  #bladzijden {text-align: center;}
+  #blznr{display: none;}
+  @media screen and (max-width: 600px) {
+    img{height: auto; width:92vw;}
+  }
+</style>
+
+</head>
+<body>
+  <div id="bladzijden">
+    <img id="nmrblz" src="">
+    <p id="blznr"></p>
+  </div>
+
+<script>
+var urlBladzijdes = "https://xfineart.com/bladzijden/wp-content/uploads/2022/04/201207"
+let i=0;
+
+toonbladzijden();
+function toonbladzijden(){
+  if(i==52){i=0;}
+  var x ="0";
+  if (i>9){x=""};
+  document.getElementById('nmrblz').src=urlBladzijdes+'_Milou-Boeken_'+x+i+'.jpg';
+  //document.getElementById('blznr').innerHTML=i;
+  i++;
+  setTimeout(toonbladzijden, 5000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>
